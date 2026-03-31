@@ -7,110 +7,894 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --accent: #3a9bb5; --accent-light: #6bb8cc; --accent-glow: rgba(58,155,181,0.10); --accent-dark: #2e7f96; --hero-bg: #3a9bb5; --hero-bg-dark: #2e7f96; --warm-bg: #f7f3ee; --warm-bg-2: #efe9e1; --warm-text: #2d3436; --warm-text-2: #636e72; --white: #ffffff; --gray-light: #dfe6e9; --coral: #e07a5f; }
+
+        :root {
+            --accent: #3a9bb5;
+            --accent-light: #6bb8cc;
+            --accent-glow: rgba(58, 155, 181, 0.10);
+            --accent-dark: #2e7f96;
+            --hero-bg: #3a9bb5;
+            --hero-bg-dark: #2e7f96;
+            --warm-bg: #f7f3ee;
+            --warm-bg-2: #efe9e1;
+            --warm-text: #2d3436;
+            --warm-text-2: #636e72;
+            --white: #ffffff;
+            --gray-light: #dfe6e9;
+            --coral: #e07a5f;
+        }
+
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--warm-bg); color: var(--warm-text); line-height: 1.6; overflow-x: hidden; }
-        header { position: sticky; top: 0; z-index: 100; background: rgba(247,243,238,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.06); }
-        .header-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.2rem; font-weight: 800; color: var(--warm-text); letter-spacing: -0.03em; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--warm-bg);
+            color: var(--warm-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ─── HEADER ─── */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 243, 238, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--warm-text);
+            letter-spacing: -0.03em;
+        }
+
         .logo span { color: var(--warm-text); opacity: 0.4; font-weight: 500; margin-left: 0.5rem; font-size: 0.85rem; }
+
         nav { display: flex; gap: 1.8rem; }
-        nav a { text-decoration: none; color: var(--warm-text-2); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        nav a {
+            text-decoration: none;
+            color: var(--warm-text-2);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
         nav a:hover { color: var(--accent); }
+
         @media (max-width: 768px) { nav { display: none; } }
-        .hero { background: linear-gradient(160deg, var(--hero-bg) 0%, var(--hero-bg-dark) 100%); color: var(--white); padding: 5rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(58,175,169,0.1) 0%, transparent 60%); pointer-events: none; }
-        .hero-badge { display: inline-block; background: rgba(255,255,255,0.12); color: var(--coral); padding: 0.5rem 1.2rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2rem; }
-        .hero h1 { font-size: clamp(2.8rem, 7vw, 4.5rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.04em; max-width: 800px; margin: 0 auto 1.5rem; }
+
+        /* ─── HERO ─── */
+        .hero {
+            background: linear-gradient(160deg, var(--hero-bg) 0%, var(--hero-bg-dark) 100%);
+            color: var(--white);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(58, 175, 169, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--coral);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
         .hero h1 .accent { color: var(--coral); }
-        .hero-sub { font-size: clamp(1rem, 2.5vw, 1.2rem); color: var(--gray-light); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.6; }
-        .pills { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 2.5rem; }
-        .pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 1.2rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; color: var(--white); display: inline-flex; align-items: center; gap: 0.5rem; }
-        .pill-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
-        .toc-wrapper { background: var(--warm-bg); padding: 3rem 2rem; }
-        .toc { max-width: 700px; margin: 0 auto; background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-        .toc h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-        .toc-items { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .toc-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; font-weight: 500; color: var(--warm-text); }
-        .toc-num { width: 28px; height: 28px; background: var(--accent-glow); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: var(--accent); flex-shrink: 0; }
-        @media (max-width: 600px) { .toc-items { grid-template-columns: 1fr; } }
-        .section { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-title { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
-        .section-sub { font-size: 1.05rem; color: var(--warm-text-2); max-width: 600px; margin: 0 auto; }
-        .features-bg { background: var(--white); border-top: 1px solid rgba(0,0,0,0.04); border-bottom: 1px solid rgba(0,0,0,0.04); }
-        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-        .feature-card { background: var(--warm-bg); border-radius: 14px; padding: 2rem; transition: transform 0.2s, box-shadow 0.2s; }
-        .feature-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
-        .feature-emoji { font-size: 1.8rem; margin-bottom: 1rem; }
-        .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-        .feature-card p { font-size: 0.9rem; color: var(--warm-text-2); line-height: 1.5; }
-        @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
-        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .step-card { text-align: center; padding: 2rem 1.5rem; }
-        .step-num { width: 56px; height: 56px; background: var(--hero-bg); color: var(--white); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 800; margin-bottom: 1.25rem; }
-        .step-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .step-card p { font-size: 0.9rem; color: var(--warm-text-2); line-height: 1.5; }
-        @media (max-width: 768px) { .steps { grid-template-columns: 1fr; gap: 1rem; } }
-        .hooks-bg { background: linear-gradient(160deg, var(--hero-bg) 0%, var(--hero-bg-dark) 100%); color: var(--white); padding: 4rem 2rem; }
-        .hooks-inner { max-width: 1100px; margin: 0 auto; }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--gray-light);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        .pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.6rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--white);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pill-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ─── CONTENT TABLE (Brooke-style) ─── */
+        .toc-wrapper {
+            background: var(--warm-bg);
+            padding: 3rem 2rem;
+        }
+
+        .toc {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .toc h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .toc-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--warm-text);
+        }
+
+        .toc-num {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-glow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .toc-items { grid-template-columns: 1fr; }
+        }
+
+        /* ─── SECTIONS ─── */
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-sub {
+            font-size: 1.05rem;
+            color: var(--warm-text-2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ─── FEATURE CARDS ─── */
+        .features-bg {
+            background: var(--white);
+            border-top: 1px solid rgba(0,0,0,0.04);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--warm-bg);
+            border-radius: 14px;
+            padding: 2rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .feature-emoji {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--warm-text-2);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ─── HOW IT WORKS ─── */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .step-num {
+            width: 56px;
+            height: 56px;
+            background: var(--hero-bg);
+            color: var(--white);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--warm-text-2);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .steps { grid-template-columns: 1fr; gap: 1rem; }
+        }
+
+        /* ─── HOOK TYPES ─── */
+        .hooks-bg {
+            background: linear-gradient(160deg, var(--hero-bg) 0%, var(--hero-bg-dark) 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .hooks-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
         .hooks-bg .section-title { color: var(--white); }
         .hooks-bg .section-sub { color: var(--gray-light); }
-        .hooks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
-        .hook-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s, background 0.2s; }
-        .hook-card:hover { border-color: var(--coral); background: rgba(255,255,255,0.12); }
-        .hook-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--coral); margin-bottom: 0.5rem; }
-        .hook-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .hook-card p { font-size: 0.88rem; color: var(--gray-light); line-height: 1.5; }
-        @media (max-width: 768px) { .hooks-grid { grid-template-columns: 1fr; } }
-        .download-section { text-align: center; padding: 4rem 2rem; max-width: 700px; margin: 0 auto; }
-        .download-section h2 { font-size: clamp(1.8rem, 4vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
-        .download-section p { color: var(--warm-text-2); margin-bottom: 2rem; font-size: 1.05rem; }
-        .download-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { display: inline-block; background: var(--coral); color: var(--white); padding: 1rem 2.5rem; border-radius: 10px; font-size: 1.1rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(224,122,95,0.3); }
-        .btn-outline { display: inline-block; background: transparent; color: var(--accent); padding: 1rem 2rem; border-radius: 10px; font-size: 1rem; font-weight: 700; text-decoration: none; border: 2px solid var(--accent); transition: all 0.2s; }
-        .btn-outline:hover { background: var(--accent); color: var(--white); }
-        .download-note { font-size: 0.85rem; color: var(--warm-text-2); margin-top: 1.25rem; }
-        .setup-bg { background: var(--white); border-top: 1px solid rgba(0,0,0,0.04); }
-        .setup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-        .setup-card { background: var(--warm-bg); border-radius: 14px; padding: 2rem; }
-        .setup-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; color: var(--accent); }
-        .setup-icon { font-size: 1.2rem; }
-        .setup-card ol { padding-left: 1.2rem; color: var(--warm-text-2); font-size: 0.92rem; }
-        .setup-card li { margin-bottom: 0.6rem; line-height: 1.5; }
-        @media (max-width: 768px) { .setup-grid { grid-template-columns: 1fr; } }
-        .faq-items { max-width: 700px; margin: 0 auto; }
-        .faq-item { background: var(--white); border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden; transition: box-shadow 0.2s; }
+
+        .hooks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+
+        .hook-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .hook-card:hover {
+            border-color: var(--coral);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .hook-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--coral);
+            margin-bottom: 0.5rem;
+        }
+
+        .hook-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hook-card p {
+            font-size: 0.88rem;
+            color: var(--gray-light);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .hooks-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ─── DOWNLOAD ─── */
+        .download-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .download-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .download-section p {
+            color: var(--warm-text-2);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .download-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--coral);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(224, 122, 95, 0.3);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid var(--accent);
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .download-note {
+            font-size: 0.85rem;
+            color: var(--warm-text-2);
+            margin-top: 1.25rem;
+        }
+
+        /* ─── SETUP ─── */
+        .setup-bg {
+            background: var(--white);
+            border-top: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .setup-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .setup-card {
+            background: var(--warm-bg);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+
+        .setup-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+        }
+
+        .setup-icon {
+            font-size: 1.2rem;
+        }
+
+        .setup-card ol {
+            padding-left: 1.2rem;
+            color: var(--warm-text-2);
+            font-size: 0.92rem;
+        }
+
+        .setup-card li {
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .setup-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ─── FAQ ─── */
+        .faq-items {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
         .faq-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-        .faq-q { padding: 1.25rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 0.95rem; user-select: none; }
-        .faq-toggle { font-size: 1.3rem; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
+
+        .faq-q {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            user-select: none;
+        }
+
+        .faq-toggle {
+            font-size: 1.3rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
         .faq-item.active .faq-toggle { transform: rotate(45deg); }
-        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 1.5rem; }
-        .faq-item.active .faq-a { max-height: 300px; padding: 0 1.5rem 1.25rem; }
-        .faq-a p { color: var(--warm-text-2); font-size: 0.92rem; line-height: 1.6; }
-        footer { background: var(--hero-bg); color: var(--white); padding: 3rem 2rem; text-align: center; }
-        .footer-brand { font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 0.75rem; }
-        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 1rem 0; }
-        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-a {
+            max-height: 300px;
+            padding: 0 1.5rem 1.25rem;
+        }
+
+        .faq-a p {
+            color: var(--warm-text-2);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--hero-bg);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
         .footer-links a:hover { color: var(--white); }
-        .footer-copy { color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 1rem; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .animate { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-        .animate.visible { opacity: 1; transform: translateY(0); }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
-    <header><div class="header-inner"><div class="logo">Reel Scriptwriter <span>by @shedoesai</span></div><nav><a href="#features">What You Get</a><a href="#how-it-works">How It Works</a><a href="#hooks">Hooks</a><a href="#faq">FAQ</a><a href="#download">Download</a></nav></div></header>
-    <section class="hero"><div class="hero-badge">Shedoesai - Free Skill</div><h1>One Prompt. One Script.<br><span class="accent">Ready to Film.</span></h1><p class="hero-sub">The free Claude skill that writes scroll-stopping Reel scripts for any niche. Hook formulas, retention loops, captions, production notes. All in 10 seconds.</p><div class="pills"><div class="pill"><span class="pill-dot"></span> Works for any niche</div><div class="pill"><span class="pill-dot"></span> 30-second setup</div><div class="pill"><span class="pill-dot"></span> March 2026 viral data</div><div class="pill"><span class="pill-dot"></span> Claude Code + Cowork</div></div></section>
-    <div class="toc-wrapper"><div class="toc"><h3>What's inside</h3><div class="toc-items"><div class="toc-item"><span class="toc-num">1</span> What You Get</div><div class="toc-item"><span class="toc-num">2</span> How It Works</div><div class="toc-item"><span class="toc-num">3</span> The 6 Hook Formulas</div><div class="toc-item"><span class="toc-num">4</span> Download the Skill</div><div class="toc-item"><span class="toc-num">5</span> Setup Guide</div><div class="toc-item"><span class="toc-num">6</span> Common Questions</div></div></div></div>
-    <div class="features-bg" id="features"><div class="section"><div class="section-header"><h2 class="section-title">What You Get</h2><p class="section-sub">Give it one prompt and it generates everything you need to film</p></div><div class="features-grid"><div class="feature-card animate"><div class="feature-emoji">📝</div><h3>3 Script Options Per Prompt</h3><p>Three different hook types generated automatically. Pick the one that matches your energy and audience.</p></div><div class="feature-card animate"><div class="feature-emoji">🎯</div><h3>Hooks Based on 2026 Data</h3><p>Every formula is pulled from what's actually performing right now. Not 2023 advice recycled with a new date.</p></div><div class="feature-card animate"><div class="feature-emoji">⏱️</div><h3>Timestamped Scripts</h3><p>Hook at 0:00, value drop at 0:03, retention bridge at 0:15, CTA at 0:30. Every beat timed for you.</p></div><div class="feature-card animate"><div class="feature-emoji">✏️</div><h3>Caption + Hashtags</h3><p>Staccato-style captions ready to paste. Plus a hashtag strategy that actually reaches new people.</p></div><div class="feature-card animate"><div class="feature-emoji">🎬</div><h3>Production Notes</h3><p>Visual directions, B-roll suggestions, and on-screen text for every section. Know exactly what to film.</p></div><div class="feature-card animate"><div class="feature-emoji">💰</div><h3>Sponsored Content Ready</h3><p>Naturally integrates brand deals without sounding like an ad. Just mention it's sponsored in your prompt.</p></div></div></div></div>
-    <div class="section" id="how-it-works"><div class="section-header"><h2 class="section-title">How It Works</h2><p class="section-sub">Three steps. Five minutes. Scripts for the whole week.</p></div><div class="steps"><div class="step-card animate"><div class="step-num">1</div><h3>Tell It Your Niche + Topic</h3><p>Share what you create content about and the topic for this script. Be as vague or specific as you want.</p></div><div class="step-card animate"><div class="step-num">2</div><h3>Pick Your Favorite</h3><p>You get 3 script options with different hook types. Choose the one that feels right for your audience.</p></div><div class="step-card animate"><div class="step-num">3</div><h3>Film It</h3><p>Follow the timestamps and production notes. Press record. Upload. Done.</p></div></div></div>
-    <div class="hooks-bg" id="hooks"><div class="hooks-inner"><div class="section-header"><h2 class="section-title">The 6 Hook Formulas Inside</h2><p class="section-sub">Proven templates that stop the scroll. Based on what's actually working in March 2026.</p></div><div class="hooks-grid"><div class="hook-card animate"><div class="hook-label">Tier 1</div><h4>The Question Hook</h4><p>Creates a curiosity gap the brain has to close. 12.2% of all top-performing videos use this format.</p></div><div class="hook-card animate"><div class="hook-label">Tier 1</div><h4>The Result-First Hook</h4><p>Show the payoff in second 1, explain how after. The "cold open" that keeps people watching.</p></div><div class="hook-card animate"><div class="hook-label">Tier 1</div><h4>The Quantified Authority</h4><p>Specific numbers plus personal experience. Instant credibility that makes viewers trust you immediately.</p></div><div class="hook-card animate"><div class="hook-label">Tier 2</div><h4>The Comparison Hook</h4><p>Before vs after. Paid vs free. Old way vs new way. Visual contrast that drives the highest save rates.</p></div><div class="hook-card animate"><div class="hook-label">Tier 2</div><h4>The Transformation Hook</h4><p>From bad state to impressive result in a specific timeframe. Shows both the pain and the payoff.</p></div><div class="hook-card animate"><div class="hook-label">Tier 2</div><h4>The Mistake Hook</h4><p>Admitting failure builds trust faster than showing success. Relatable, promising, and impossible to scroll past.</p></div></div></div></div>
-    <div class="download-section" id="download"><h2>Download the Skill</h2><p>Ready to stop staring at a blank page before every Reel? Grab the file and set it up in 30 seconds.</p><div class="download-btns"><a href="https://raw.githubusercontent.com/Johannenft/reel-scriptwriter-landing/main/SKILL.md" class="btn-primary" onclick="event.preventDefault();fetch(this.href).then(r=>r.blob()).then(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='SKILL.md';a.click()})">Download the Skill</a></div><p class="download-note">Works with both Claude Code and Cowork. See the setup guide below.</p></div>
-    <div class="setup-bg"><div class="section"><div class="section-header"><h2 class="section-title">Setup Takes 30 Seconds</h2><p class="section-sub">Works in both Claude Code and Cowork. Pick whichever you use.</p></div><div class="setup-grid"><div class="setup-card animate"><h3><span class="setup-icon">🤝</span> Cowork (Desktop App)</h3><ol><li>Download the SKILL.md file above</li><li>Open Cowork, go to Customise, then Skills</li><li>Click "+" and import the file</li><li>Start a new session and say "write me a reel script"</li></ol></div><div class="setup-card animate"><h3><span class="setup-icon">💻</span> Claude Code (Terminal)</h3><ol><li>Copy the SKILL.md into your .claude/skills/reel-scriptwriter/ folder</li><li>Open Claude Code in your project directory</li><li>Say "write me a reel script"</li><li>Answer 2 prompts: your niche and your topic</li></ol></div></div></div></div>
-    <div class="section" id="faq"><div class="section-header"><h2 class="section-title">Common Questions</h2></div><div class="faq-items"><div class="faq-item animate"><div class="faq-q"><span>Do I need a paid Claude plan?</span><span class="faq-toggle">+</span></div><div class="faq-a"><p>The skill works on any Claude plan. Cowork requires Pro or above. Claude Code requires Pro or Team. If you're on the free tier, the skill still works but you'll hit usage limits faster.</p></div></div><div class="faq-item animate"><div class="faq-q"><span>Does it only work for AI/tech content?</span><span class="faq-toggle">+</span></div><div class="faq-a"><p>Not at all. It's designed for any niche: fitness, cooking, finance, beauty, business, travel, parenting, and beyond. Just tell it your niche in the first prompt and it adapts everything.</p></div></div><div class="faq-item animate"><div class="faq-q"><span>Can I use it for sponsored content?</span><span class="faq-toggle">+</span></div><div class="faq-a"><p>Yes. Just mention it's a sponsored video in your prompt. The skill generates scripts that naturally integrate brand deals without losing authenticity or engagement.</p></div></div><div class="faq-item animate"><div class="faq-q"><span>What if I don't know my hook style?</span><span class="faq-toggle">+</span></div><div class="faq-a"><p>That's the whole point. You get 3 options with different hook types every time. Pick the one that feels right. Over time you'll learn which hooks your audience responds to best.</p></div></div><div class="faq-item animate"><div class="faq-q"><span>Does it write captions too?</span><span class="faq-toggle">+</span></div><div class="faq-a"><p>Yes. Every script includes a staccato-style caption and hashtag strategy. Copy and paste straight into Instagram, TikTok, or your scheduling tool.</p></div></div></div></div>
-    <footer><div class="footer-brand">@shedoesai</div><div class="footer-links"><a href="https://instagram.com/shedoesai" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://shedoesai.beehiiv.com" target="_blank" rel="noopener noreferrer">Newsletter</a><a href="#download">Download</a></div><p class="footer-copy">Built by Gunhild Johanne from Shedoesai for creators who move fast. Reel Scriptwriter is a free Claude skill.</p></footer>
-    <script>document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>q.parentElement.classList.toggle('active'))});const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.animate').forEach(el=>obs.observe(el));</script>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">Reel Scriptwriter <span>by @shedoesai</span></div>
+            <nav>
+                <a href="#features">What You Get</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#hooks">Hooks</a>
+                <a href="#faq">FAQ</a>
+                <a href="#download">Download</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-badge">Shedoesai - Free Skill</div>
+        <h1>One Prompt. One Script.<br><span class="accent">Ready to Film.</span></h1>
+        <p class="hero-sub">The free Claude skill that writes scroll-stopping Reel scripts for any niche. Hook formulas, retention loops, captions, production notes. All in 10 seconds.</p>
+        <div class="pills">
+            <div class="pill"><span class="pill-dot"></span> Works for any niche</div>
+            <div class="pill"><span class="pill-dot"></span> 30-second setup</div>
+            <div class="pill"><span class="pill-dot"></span> March 2026 viral data</div>
+            <div class="pill"><span class="pill-dot"></span> Claude Code + Cowork</div>
+        </div>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc-wrapper">
+        <div class="toc">
+            <h3>What's inside</h3>
+            <div class="toc-items">
+                <div class="toc-item"><span class="toc-num">1</span> What You Get</div>
+                <div class="toc-item"><span class="toc-num">2</span> How It Works</div>
+                <div class="toc-item"><span class="toc-num">3</span> The 6 Hook Formulas</div>
+                <div class="toc-item"><span class="toc-num">4</span> Download the Skill</div>
+                <div class="toc-item"><span class="toc-num">5</span> Setup Guide</div>
+                <div class="toc-item"><span class="toc-num">6</span> Common Questions</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU GET -->
+    <div class="features-bg" id="features">
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">What You Get</h2>
+                <p class="section-sub">Give it one prompt and it generates everything you need to film</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate">
+                    <div class="feature-emoji">📝</div>
+                    <h3>3 Script Options Per Prompt</h3>
+                    <p>Three different hook types generated automatically. Pick the one that matches your energy and audience.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-emoji">🎯</div>
+                    <h3>Hooks Based on 2026 Data</h3>
+                    <p>Every formula is pulled from what's actually performing right now. Not 2023 advice recycled with a new date.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-emoji">⏱️</div>
+                    <h3>Timestamped Scripts</h3>
+                    <p>Hook at 0:00, value drop at 0:03, retention bridge at 0:15, CTA at 0:30. Every beat timed for you.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-emoji">✏️</div>
+                    <h3>Caption + Hashtags</h3>
+                    <p>Staccato-style captions ready to paste. Plus a hashtag strategy that actually reaches new people.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-emoji">🎬</div>
+                    <h3>Production Notes</h3>
+                    <p>Visual directions, B-roll suggestions, and on-screen text for every section. Know exactly what to film.</p>
+                </div>
+                <div class="feature-card animate">
+                    <div class="feature-emoji">💰</div>
+                    <h3>Sponsored Content Ready</h3>
+                    <p>Naturally integrates brand deals without sounding like an ad. Just mention it's sponsored in your prompt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="section" id="how-it-works">
+        <div class="section-header">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-sub">Three steps. Five minutes. Scripts for the whole week.</p>
+        </div>
+        <div class="steps">
+            <div class="step-card animate">
+                <div class="step-num">1</div>
+                <h3>Tell It Your Niche + Topic</h3>
+                <p>Share what you create content about and the topic for this script. Be as vague or specific as you want.</p>
+            </div>
+            <div class="step-card animate">
+                <div class="step-num">2</div>
+                <h3>Pick Your Favorite</h3>
+                <p>You get 3 script options with different hook types. Choose the one that feels right for your audience.</p>
+            </div>
+            <div class="step-card animate">
+                <div class="step-num">3</div>
+                <h3>Film It</h3>
+                <p>Follow the timestamps and production notes. Press record. Upload. Done.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOOK TYPES -->
+    <div class="hooks-bg" id="hooks">
+        <div class="hooks-inner">
+            <div class="section-header">
+                <h2 class="section-title">The 6 Hook Formulas Inside</h2>
+                <p class="section-sub">Proven templates that stop the scroll. Based on what's actually working in March 2026.</p>
+            </div>
+            <div class="hooks-grid">
+                <div class="hook-card animate">
+                    <div class="hook-label">Tier 1</div>
+                    <h4>The Question Hook</h4>
+                    <p>Creates a curiosity gap the brain has to close. 12.2% of all top-performing videos use this format.</p>
+                </div>
+                <div class="hook-card animate">
+                    <div class="hook-label">Tier 1</div>
+                    <h4>The Result-First Hook</h4>
+                    <p>Show the payoff in second 1, explain how after. The "cold open" that keeps people watching.</p>
+                </div>
+                <div class="hook-card animate">
+                    <div class="hook-label">Tier 1</div>
+                    <h4>The Quantified Authority</h4>
+                    <p>Specific numbers plus personal experience. Instant credibility that makes viewers trust you immediately.</p>
+                </div>
+                <div class="hook-card animate">
+                    <div class="hook-label">Tier 2</div>
+                    <h4>The Comparison Hook</h4>
+                    <p>Before vs after. Paid vs free. Old way vs new way. Visual contrast that drives the highest save rates.</p>
+                </div>
+                <div class="hook-card animate">
+                    <div class="hook-label">Tier 2</div>
+                    <h4>The Transformation Hook</h4>
+                    <p>From bad state to impressive result in a specific timeframe. Shows both the pain and the payoff.</p>
+                </div>
+                <div class="hook-card animate">
+                    <div class="hook-label">Tier 2</div>
+                    <h4>The Mistake Hook</h4>
+                    <p>Admitting failure builds trust faster than showing success. Relatable, promising, and impossible to scroll past.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOWNLOAD -->
+    <div class="download-section" id="download">
+        <h2>Download the Skill</h2>
+        <p>Ready to stop staring at a blank page before every Reel? Grab the file and set it up in 30 seconds.</p>
+        <div class="download-btns">
+            <a href="/SKILL.md" class="btn-primary" download="SKILL.md">Download the Skill</a>
+        </div>
+        <p class="download-note">Works with both Claude Code and Cowork. See the setup guide below.</p>
+    </div>
+
+    <!-- SETUP -->
+    <div class="setup-bg">
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Setup Takes 30 Seconds</h2>
+                <p class="section-sub">Works in both Claude Code and Cowork. Pick whichever you use.</p>
+            </div>
+            <div class="setup-grid">
+                <div class="setup-card animate">
+                    <h3><span class="setup-icon">🤝</span> Cowork (Desktop App)</h3>
+                    <ol>
+                        <li>Download the .skill file above</li>
+                        <li>Open Cowork, go to Customise, then Skills</li>
+                        <li>Click "+" and import the file</li>
+                        <li>Start a new session and say "write me a reel script"</li>
+                    </ol>
+                </div>
+                <div class="setup-card animate">
+                    <h3><span class="setup-icon">💻</span> Claude Code (Terminal)</h3>
+                    <ol>
+                        <li>Copy the SKILL.md into your .claude/skills/reel-scriptwriter/ folder</li>
+                        <li>Open Claude Code in your project directory</li>
+                        <li>Say "write me a reel script"</li>
+                        <li>Answer 2 prompts: your niche and your topic</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section" id="faq">
+        <div class="section-header">
+            <h2 class="section-title">Common Questions</h2>
+        </div>
+        <div class="faq-items">
+            <div class="faq-item animate">
+                <div class="faq-q">
+                    <span>Do I need a paid Claude plan?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>The skill works on any Claude plan. Cowork requires Pro or above. Claude Code requires Pro or Team. If you're on the free tier, the skill still works but you'll hit usage limits faster.</p>
+                </div>
+            </div>
+            <div class="faq-item animate">
+                <div class="faq-q">
+                    <span>Does it only work for AI/tech content?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>Not at all. It's designed for any niche: fitness, cooking, finance, beauty, business, travel, parenting, and beyond. Just tell it your niche in the first prompt and it adapts everything.</p>
+                </div>
+            </div>
+            <div class="faq-item animate">
+                <div class="faq-q">
+                    <span>Can I use it for sponsored content?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>Yes. Just mention it's a sponsored video in your prompt. The skill generates scripts that naturally integrate brand deals without losing authenticity or engagement.</p>
+                </div>
+            </div>
+            <div class="faq-item animate">
+                <div class="faq-q">
+                    <span>What if I don't know my hook style?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>That's the whole point. You get 3 options with different hook types every time. Pick the one that feels right. Over time you'll learn which hooks your audience responds to best.</p>
+                </div>
+            </div>
+            <div class="faq-item animate">
+                <div class="faq-q">
+                    <span>Does it write captions too?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-a">
+                    <p>Yes. Every script includes a staccato-style caption and hashtag strategy. Copy and paste straight into Instagram, TikTok, or your scheduling tool.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">@shedoesai</div>
+        <div class="footer-links">
+            <a href="https://instagram.com/shedoesai" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://shedoesai.beehiiv.com" target="_blank" rel="noopener noreferrer">Newsletter</a>
+            <a href="#download">Download</a>
+        </div>
+        <p class="footer-copy">Built by Gunhild Johanne from Shedoesai for creators who move fast. Reel Scriptwriter is a free Claude skill.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+        });
+
+        // Scroll animations
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.animate').forEach(el => obs.observe(el));
+    </script>
+
 </body>
 </html>
