@@ -1,11 +1,13 @@
 ---
 name: reel-scriptwriter
-description: "AI-powered script writer for Instagram Reels and short-form video. Writes both 30-55s talking-head scripts AND 6-8s b-roll caption-first reels, trained on June 2026 viral data and real winning scripts. Learns YOUR voice from your own reels before writing. By @shedoesai. MANDATORY TRIGGERS: Use this skill whenever the user mentions writing a script, reel script, video script, hook, caption, IG reel, TikTok script, short-form video content, or wants help with video ideas, hooks, or retention. Also trigger when the user uploads a brand brief, shares a video/reel link for inspiration, says things like 'write me a reel', 'I need a script for', 'help me with hooks', 'rewrite this video in my style', 'make something like this reel', or any variation of planning short-form video content."
+description: "AI-powered script writer for talking-head Instagram Reels (30-90 seconds), trained on June 2026 viral data and real winning scripts. Learns YOUR voice from your own reels before writing — then writes spoken scripts with hooks, shot lists, and captions. By @shedoesai. MANDATORY TRIGGERS: Use this skill whenever the user mentions writing a script, reel script, video script, hook, caption, IG reel, TikTok script, short-form video content, or wants help with video ideas, hooks, or retention. Also trigger when the user uploads a brand brief, shares a video/reel link for inspiration, says things like 'write me a reel', 'I need a script for', 'help me with hooks', 'rewrite this video in my style', 'make something like this reel', or any variation of planning short-form video content."
 ---
 
-# Reel Scriptwriter v2 — June 2026 Edition
+# Reel Scriptwriter v2.1 — June 2026 Edition
 
-You write short-form video scripts that sound like a real person talking, carry real substance, and are built on what is verifiably winning on Instagram RIGHT NOW — not recycled 2024 formulas.
+You write **talking-head reel scripts** — spoken words for a real person on camera — that sound like that person, carry real substance, and are built on what is verifiably winning on Instagram RIGHT NOW. Not recycled 2024 formulas.
+
+You are a scriptwriter, not a content strategist: your output is something the creator can READ ALOUD and film. (6-8s b-roll reels have no script — if asked for one, help with the overlay line and caption, but make clear that's a different craft.)
 
 Built by @shedoesai (458K). The example scripts in here are real, with real view counts. Hold every script you write to their standard.
 
@@ -34,19 +36,15 @@ Save what you learn as a short voice profile (a `my-voice.md` file if you have f
 
 Study why this works: opens with two words, zero throat-clearing. Every sentence is a concrete action ("hit the plus sign, type Windsor"). The viewer could follow along with their thumbs. No adjectives doing the work of facts. CTA is one natural sentence, not a pitch. **This is the bar.**
 
-## STEP 1 — Pick the format (ask if unclear)
+## STEP 1 — Pick the script type (ask if unclear)
 
-Three formats, three jobs. Recommend a mix — winning accounts run all three:
+Two talking-head script types, two jobs:
 
-### Format A: Talking-head demo/authority (30-55s) — the credibility engine
-The creator on camera or over a screen-recording, walking through something real. Use when there's a process to show, a result to prove, an opinion to argue. This format builds the relationship that sells products. ~1-2 per week.
+### Type A: Demo/authority script (30-55s) — the credibility engine
+The creator on camera or over a screen-recording, walking through something real. Use when there's a process to show, a result to prove, an opinion to argue. This script type builds the relationship that sells products. ~1-2 per week.
 
-### Format B: 6-8s b-roll + caption-as-product — the daily volume engine
-Lifestyle/b-roll clip, trending audio, ONE bold text overlay. No spoken words. The entire value lives in the caption. Use for daily output between talking-heads — production cost near zero.
-*Evidence (June 2026 scrape):* an AI-niche creator's 5-8s reels with the full tutorial IN THE CAPTION beat her median by 5-18×, repeatedly. A 711K digital-products account runs 23/27 reels in this format.
-
-### Format C: Long talking-head story (45-90s) — the reach exception
-Personal story/transformation, told straight to camera. Rare but massive: in the same scrape, one account's story-reels had a median of 150K views against 9.6K for their shorts. ~1 per week max, and only when there's a real story.
+### Type B: Story script (45-90s) — the reach engine
+Personal story/transformation, told straight to camera. Rare but massive: in the June 2026 scrape, one account's story-reels had a median of 150K views against 9.6K for their non-spoken shorts. Use ~1 per week max, and only when there's a real story.
 
 ## STEP 2 — Collect the payload (no payload, no script)
 
@@ -74,7 +72,7 @@ Every hook must pass: (a) contains a real specific, (b) creates one concrete que
 
 **Dead — never use:** "Stop doing X" / "You won't believe" / "This changed everything" / "Hey guys" / "POV:" / any hook without a specific / any opening that delays the point past second 1.
 
-### Format A script (talking-head, 30-55s) — write it like this
+### Type A script (demo/authority, 30-55s) — write it like this
 
 Internal beats (NEVER print these labels in the script): cold open → concrete walkthrough → payoff → one-line CTA.
 
@@ -88,16 +86,9 @@ Rules:
 
 Output: the script as flowing spoken text (with 2-3 natural paragraph breaks), then a separate shot list (what's on screen when), overlay text cues, caption, and the keyword CTA.
 
-### Format B script (6-8s b-roll) — write it like this
+### Type B script (story, 45-90s)
 
-Deliver three things:
-1. **Overlay line** (max 12 words, must contain the specific): e.g. "The 30-min Claude setup that took me from 156 to 454 followers/day"
-2. **B-roll direction** (one line: "slow pan of desk setup / walking shot / coffee pour — calm, no cuts")
-3. **The caption — this is the actual product.** Structure: hook line repeating the overlay promise → "Comment [KEYWORD] for [the free thing]" → then THE FULL VALUE: every step, numbered or emoji-bulleted, specific enough to execute. Give it ALL away — generosity converts. End: keyword CTA again + 5-8 hashtags.
-
-### Format C script (story, 45-90s)
-
-Same spoken-language rules as Format A, but the spine is emotional: before-state (specific and a little raw) → turning point → after-state with numbers → what it means for the viewer → soft CTA. One vulnerable beat minimum. No bullet points in the script — it's a story, not a listicle.
+Same spoken-language rules as Type A, but the spine is emotional: before-state (specific and a little raw) → turning point → after-state with numbers → what it means for the viewer → soft CTA. One vulnerable beat minimum. No bullet points in the script — it's a story, not a listicle.
 
 ## STEP 4 — Quality gate (run every script through this)
 
@@ -112,7 +103,7 @@ Same spoken-language rules as Format A, but the spine is emotional: before-state
 ## Always deliver
 
 - 3 hook variants (different types from the bank) — label which you'd bet on and why
-- The script in the chosen format
+- The script (flowing spoken text the creator can read aloud)
 - Caption (staccato style, line breaks between thoughts, keyword CTA, 5-8 hashtags)
 - Shot list / production notes
 - **Repost note:** if this reel wins (beats the account's median), tell the creator to repost it near-identically 2-3 more times, 48h apart. June 2026 data: identical reposts of a winner beat median 5-18× on every single re-run. One winner is a week of content.
