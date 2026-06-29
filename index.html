@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reel Scriptwriter v2.1 — Free Claude Skill by @shedoesai</title>
+<title>Free Claude Scriptwriting Skills by @shedoesai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -206,6 +206,50 @@ body {
 
 .lede { margin-top:1.1rem; color:var(--ink-2); font-size:1.05rem; max-width:600px; }
 
+/* ───────────── PICK YOUR SKILL (two skills) ───────────── */
+.pick-bg { background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.pick-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; margin-top:3rem; }
+.pick-card {
+    background:#fffdf8;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:2.4rem 2.1rem;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pick-card:hover { transform:translateY(-4px); box-shadow:0 20px 48px rgba(23,19,16,0.13); }
+.pick-card::before {
+    content:'';
+    position:absolute; top:0; left:0; right:0; height:5px;
+    border-radius:14px 14px 0 0;
+    background:var(--red);
+}
+.pick-card.yap::before { background:var(--gold); }
+.pick-tag {
+    font-family:'Courier Prime',monospace;
+    font-size:0.74rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--red); font-weight:700; margin-bottom:0.9rem;
+}
+.pick-card.yap .pick-tag { color:var(--gold); }
+.pick-card h3 { font-family:'Fraunces',serif; font-weight:600; font-size:1.7rem; letter-spacing:-0.015em; margin-bottom:0.35rem; }
+.pick-card .sub { color:var(--ink-2); font-size:0.98rem; margin-bottom:1.4rem; }
+.pick-list { list-style:none; margin-bottom:1.6rem; }
+.pick-list li { display:flex; gap:0.7rem; align-items:flex-start; font-size:0.92rem; color:var(--ink-2); margin-bottom:0.7rem; }
+.pick-list li::before { content:'✓'; color:var(--red); font-weight:700; flex:none; }
+.pick-card.yap .pick-list li::before { color:var(--gold); }
+.pick-for {
+    font-size:0.86rem; color:var(--ink-2);
+    border-top:1px solid var(--line);
+    padding-top:1.1rem; margin-bottom:1.5rem;
+}
+.pick-for b { color:var(--ink); }
+.pick-card .btn { margin-top:auto; text-align:center; }
+.btn-gold { background:var(--gold); color:#fff; }
+.btn-gold:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(201,151,44,0.38); }
+@media (max-width:840px) { .pick-grid { grid-template-columns:1fr; } }
+
 /* ───────────── SCRIPT PAGE MOCK ───────────── */
 .proof { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
 
@@ -357,6 +401,7 @@ body {
 .dl > * { position:relative; }
 .dl .h2 { margin:0 auto; }
 .dl p { margin:1rem auto 2.2rem; color:rgba(245,239,227,0.7); max-width:480px; }
+.dl-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
 
 /* ───────────── SETUP ───────────── */
 .setup-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:3rem; }
@@ -383,7 +428,7 @@ body {
 .faq-item.active .faq-toggle { transform:rotate(45deg); }
 .faq-a { max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
 .faq-a p { color:var(--ink-2); font-size:0.95rem; padding:0 0.2rem 1.4rem; }
-.faq-item.active .faq-a { max-height:340px; }
+.faq-item.active .faq-a { max-height:360px; }
 
 /* ───────────── FOOTER ───────────── */
 footer {
@@ -414,29 +459,66 @@ footer .end {
 <!-- HERO -->
 <section class="hero">
     <div class="hero-top">
-        <div class="brand">Reel Scriptwriter <span class="at">v2.1 · @shedoesai</span></div>
+        <div class="brand">Scriptwriter Skills <span class="at">· @shedoesai</span></div>
         <div class="rec"><span class="rec-dot"></span> REC</div>
     </div>
     <div class="hero-main">
-        <div class="slate">SCENE 01 &nbsp;·&nbsp; FREE CLAUDE SKILL &nbsp;·&nbsp; <b>JUNE 2026 DATA</b></div>
+        <div class="slate">TWO FREE CLAUDE SKILLS &nbsp;·&nbsp; ONE CREATOR &nbsp;·&nbsp; <b>JUNE 2026 DATA</b></div>
         <h1>Scripts that sound<br>like <em>you.</em></h1>
         <div class="typeline"><span class="prompt">&gt;&nbsp;</span><span id="typed"></span><span class="cursor"></span></div>
         <div class="hero-ctas">
-            <a href="#download" class="btn btn-red">Get the skill — free</a>
-            <a href="#proof" class="btn btn-ghost">See what it writes</a>
+            <a href="#pick" class="btn btn-red">Get the skills — free</a>
+            <a href="#proof" class="btn btn-ghost">See what they write</a>
         </div>
-        <p class="hero-note">Talking-head reel scripts, 30–90 seconds. Built by a creator with 458K followers.</p>
+        <p class="hero-note">Two free Claude skills: one writes tight talking-head reels, one writes loose organic yapping. Built by a creator with 458K followers.</p>
     </div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee">
     <div class="marquee-track" id="marquee">
-        <span>314K views on the hook it studies</span><span class="dot">✸</span>
-        <span>Learns your voice before writing</span><span class="dot">✸</span>
+        <span>Two free Claude scriptwriting skills</span><span class="dot">✸</span>
+        <span>Both learn your voice before writing</span><span class="dot">✸</span>
         <span>Real hooks, real view counts</span><span class="dot">✸</span>
         <span>No invented numbers, ever</span><span class="dot">✸</span>
         <span>Built by @shedoesai — 458K</span><span class="dot">✸</span>
+    </div>
+</div>
+
+<!-- PICK YOUR SKILL -->
+<div class="pick-bg" id="pick">
+    <div class="wrap section">
+        <div class="kicker reveal">Two skills, two jobs</div>
+        <h2 class="h2 reveal">Pick the one that <em>fits your video.</em></h2>
+        <p class="lede reveal">Same creator, same voice-first rules, two different crafts. Grab one or grab both — they are free.</p>
+        <div class="pick-grid">
+            <div class="pick-card reveal">
+                <div class="pick-tag">Skill 01 · the demo</div>
+                <h3>Reel Scriptwriter</h3>
+                <p class="sub">Tight talking-head reels, 30–90 seconds. For when you have a process to show or a result to prove.</p>
+                <ul class="pick-list">
+                    <li>Demo and story scripts, timed beat by beat</li>
+                    <li>Hooks pulled from real reels with real view counts</li>
+                    <li>Refuses thin scripts — needs your real steps and numbers</li>
+                    <li>Caption, shot list and a repost plan every time</li>
+                </ul>
+                <p class="pick-for"><b>Use it when:</b> you want a polished, high-retention reel that proves you know your stuff.</p>
+                <a href="/SKILL.md" class="btn btn-red" download="SKILL.md">Download Reel Scriptwriter</a>
+            </div>
+            <div class="pick-card yap reveal">
+                <div class="pick-tag">Skill 02 · the yap</div>
+                <h3>Yapping Scriptwriter</h3>
+                <p class="sub">Loose, sat-down, talk-to-camera scripts for an organic series. For when you are just sharing what you actually use AI for. No demo, no sponsor energy.</p>
+                <ul class="pick-list">
+                    <li>Writes the way you talk, so it sounds unscripted</li>
+                    <li>Researches the yaps going viral in your niche first</li>
+                    <li>Built to make you sound natural, not scripted</li>
+                    <li>Hook, caption and a one-word CTA every time</li>
+                </ul>
+                <p class="pick-for"><b>Use it when:</b> you want to talk straight to camera and sound like a real person, not a tutorial.</p>
+                <a href="/yapping-SKILL.md" class="btn btn-gold" download="SKILL.md">Download Yapping Scriptwriter</a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -458,12 +540,12 @@ footer .end {
             </div>
         </div>
         <div class="proof-copy reveal">
-            <div class="kicker">What you actually get</div>
+            <div class="kicker">What both skills give you</div>
             <h2 class="h2">Read it aloud. <em>Film it.</em> Done.</h2>
-            <div class="check"><div class="check-mark">✓</div><div><b>It learns your voice first</b><p>Before writing a line, it builds a voice profile from what you actually say in your reels — your phrases, your rhythm, your energy.</p></div></div>
-            <div class="check"><div class="check-mark">✓</div><div><b>Two script types, two jobs</b><p>30–55s demo scripts that prove you know your stuff. 45–90s story scripts that pull massive reach.</p></div></div>
-            <div class="check"><div class="check-mark">✓</div><div><b>No thin scripts</b><p>It refuses to write until it has the real substance — the steps, the numbers, the tool names. Zero filler, by design.</p></div></div>
-            <div class="check"><div class="check-mark">✓</div><div><b>Caption + shot list included</b><p>Staccato caption, one keyword CTA, hashtags, overlay cues. Read, film, paste, post.</p></div></div>
+            <div class="check"><div class="check-mark">✓</div><div><b>They learn your voice first</b><p>Before writing a line, each one builds a voice profile from what you actually say in your reels — your phrases, your rhythm, your energy.</p></div></div>
+            <div class="check"><div class="check-mark">✓</div><div><b>Two skills, two vibes</b><p>Reel Scriptwriter for the tight, high-retention demo. Yapping Scriptwriter for the loose, organic talk-to-camera series.</p></div></div>
+            <div class="check"><div class="check-mark">✓</div><div><b>No thin scripts</b><p>Neither one writes filler. They work from real substance — your steps, your numbers, what is genuinely working in your niche right now.</p></div></div>
+            <div class="check"><div class="check-mark">✓</div><div><b>Caption + shot list included</b><p>Staccato caption, a keyword CTA, hashtags, overlay cues. Read, film, paste, post.</p></div></div>
         </div>
     </div>
 </div>
@@ -471,12 +553,12 @@ footer .end {
 <!-- HOW IT WORKS -->
 <div class="steps-bg">
     <div class="wrap section">
-        <div class="kicker reveal">How it works</div>
+        <div class="kicker reveal">How they work</div>
         <h2 class="h2 reveal">Three scenes. <em>Five minutes.</em></h2>
         <div class="scenes">
             <div class="scene reveal"><span class="scene-no">SCENE 01</span><h3>Teach it your voice</h3><p>Once: paste what you actually said in 2–3 of your best reels (or your last 10–20 captions). It builds your voice profile and keeps it.</p></div>
-            <div class="scene reveal"><span class="scene-no">SCENE 02</span><h3>Give it the meat</h3><p>Topic + the real substance: your steps, your numbers, your keyword. It never invents results and never pads with filler.</p></div>
-            <div class="scene reveal"><span class="scene-no">SCENE 03</span><h3>Pick &amp; film</h3><p>3 hook variants, the script, caption, shot list — every time. And when a reel wins, a repost plan to milk it.</p></div>
+            <div class="scene reveal"><span class="scene-no">SCENE 02</span><h3>Give it the meat</h3><p>Your topic plus the real substance. Reel Scriptwriter wants your steps and numbers. Yapping Scriptwriter goes and researches what is trending in your niche first.</p></div>
+            <div class="scene reveal"><span class="scene-no">SCENE 03</span><h3>Pick &amp; film</h3><p>Hook variants, the script, caption, shot list — every time. And when a reel wins, a repost plan to milk it.</p></div>
         </div>
     </div>
 </div>
@@ -485,7 +567,7 @@ footer .end {
 <div class="wrap section">
     <div class="kicker reveal">Hooks with receipts</div>
     <h2 class="h2 reveal">Not theory. <em>View counts.</em></h2>
-    <p class="lede reveal">Every hook formula inside comes from a real reel scraped in June 2026 — with the numbers to prove it.</p>
+    <p class="lede reveal">Every hook formula inside comes from a real reel scraped in June 2026 — with the numbers to prove it. Both skills write from this same evidence.</p>
     <div class="hooks-grid">
         <div class="receipt reveal"><div class="receipt-views">314K<small>views — real reel</small></div><h4>The Result + "Still" Twist</h4><p><q>I let Claude roast my Instagram. 455K followers and it still found the one thing I'm doing wrong.</q> Vulnerability at scale.</p></div>
         <div class="receipt reveal"><div class="receipt-views">5–18×<small>median, 5 days straight</small></div><h4>The Setup-Payoff Promise</h4><p><q>30-min Claude setup that transforms results.</q> Re-ran five days in a row — beat the account's median every single run.</p></div>
@@ -495,7 +577,7 @@ footer .end {
         <div class="receipt reveal"><div class="receipt-views">150K<small>vs 9.6K — story reels</small></div><h4>The Story Script</h4><p>One account's talking-head stories pull a 150K median against 9.6K for their non-spoken shorts. The reach engine.</p></div>
     </div>
     <div class="graveyard reveal">
-        <span class="gtitle">☠ The dead list — what v2.1 refuses to write</span>
+        <span class="gtitle">☠ The dead list — what neither skill will write</span>
         <span class="dead">"Stop doing X"</span>
         <span class="dead">"You won't believe…"</span>
         <span class="dead">"POV:"</span>
@@ -510,8 +592,11 @@ footer .end {
     <div class="dl reveal">
         <div class="kicker" style="color:var(--gold)">Free download</div>
         <h2 class="h2">Your next reel is <em>one prompt away.</em></h2>
-        <p>One file. The whole system — voice profile, hook bank, payload rules, quality gate. Works in Claude Cowork and Claude Code.</p>
-        <a href="/SKILL.md" class="btn btn-red" download="SKILL.md">Download the skill (v2.1)</a>
+        <p>Two files, the whole system in each — voice profile, hook bank, rules, quality gate. Both work in Claude Cowork and Claude Code. Grab one or both.</p>
+        <div class="dl-btns">
+            <a href="/SKILL.md" class="btn btn-red" download="SKILL.md">Reel Scriptwriter</a>
+            <a href="/yapping-SKILL.md" class="btn btn-gold" download="SKILL.md">Yapping Scriptwriter</a>
+        </div>
         <p class="hero-note" style="margin-top:1.2rem">No signup wall here — but the newsletter gets the updates first.</p>
     </div>
 </div>
@@ -524,18 +609,18 @@ footer .end {
         <div class="setup-card reveal">
             <h3>🤝 Cowork (desktop app)</h3>
             <ol>
-                <li>Download the skill file above</li>
+                <li>Download the skill file (or both) above</li>
                 <li>Open Cowork → Customise → Skills</li>
                 <li>Click <code>+</code> and import the file</li>
-                <li>New session → say <code>write me a reel script</code> — it asks for your voice first</li>
+                <li>New session → say <code>write me a reel script</code> or <code>write my next yapping video</code></li>
             </ol>
         </div>
         <div class="setup-card reveal">
             <h3>💻 Claude Code (terminal)</h3>
             <ol>
-                <li>Drop <code>SKILL.md</code> into <code>.claude/skills/reel-scriptwriter/</code></li>
+                <li>Drop each <code>SKILL.md</code> into its own folder: <code>.claude/skills/reel-scriptwriter/</code> and <code>.claude/skills/yapping-scriptwriter/</code></li>
                 <li>Open Claude Code in your project</li>
-                <li>Say <code>write me a reel script</code></li>
+                <li>Say <code>write me a reel script</code> or <code>write my next yapping video</code></li>
                 <li>First run: paste 2–3 of your real reels so it learns your voice</li>
             </ol>
         </div>
@@ -547,11 +632,12 @@ footer .end {
     <div class="kicker reveal">Field notes</div>
     <h2 class="h2 reveal">Common <em>questions.</em></h2>
     <div class="faq">
-        <div class="faq-item reveal"><div class="faq-q">What's new in v2.1?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Everything that made v1 scripts feel generic is gone. v2.1 learns your voice from your real reels before writing, writes both demo scripts (30–55s) and story scripts (45–90s), uses hooks with real June 2026 view counts, refuses to write thin scripts without real substance, and tells you when to repost a winner.</p></div></div>
-        <div class="faq-item reveal"><div class="faq-q">Do I need a paid Claude plan?<span class="faq-toggle">+</span></div><div class="faq-a"><p>The skill works on any Claude plan. Cowork requires Pro or above. Claude Code requires Pro or Team. On the free tier the skill still works — you'll just hit usage limits faster.</p></div></div>
-        <div class="faq-item reveal"><div class="faq-q">Does it only work for AI/tech content?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Not at all. Fitness, cooking, finance, beauty, business, travel, parenting — the voice profile is built from YOUR reels, so it adapts to whatever you make.</p></div></div>
-        <div class="faq-item reveal"><div class="faq-q">Can I use it for sponsored content?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Yes. Mention it's sponsored in your prompt. v2 opens with the result the product delivers, names the brand by second 5–8, and keeps disclosures in the caption — so it never sounds like an ad.</p></div></div>
-        <div class="faq-item reveal"><div class="faq-q">Does it write captions too?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Every script comes with a staccato-style caption, one keyword CTA, and 5–8 hashtags — ready to paste into Instagram, TikTok, or your scheduling tool.</p></div></div>
+        <div class="faq-item reveal"><div class="faq-q">Which skill should I use?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Use Reel Scriptwriter when you have something to show or prove and want a tight, high-retention reel. Use Yapping Scriptwriter when you just want to talk straight to camera and sound like a real person — the organic, un-sponsored series style. Most creators end up using both, for different days.</p></div></div>
+        <div class="faq-item reveal"><div class="faq-q">What exactly is the yapping skill?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Yapping is talking direct to camera, like you're on FaceTime with a friend. It is going viral right now because people are sick of over-polished, AI-everything content. The catch: it looks effortless but for most of us it is still scripted. The yapping skill researches what is going viral in your niche, then writes you a loose script in your own voice — tight enough that you don't ramble, loose enough that you still sound natural.</p></div></div>
+        <div class="faq-item reveal"><div class="faq-q">Do I need a paid Claude plan?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Both skills work on any Claude plan. Cowork requires Pro or above. Claude Code requires Pro or Team. On the free tier the skills still work — you'll just hit usage limits faster.</p></div></div>
+        <div class="faq-item reveal"><div class="faq-q">Do they only work for AI/tech content?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Not at all. Fitness, cooking, finance, beauty, business, travel, parenting — the voice profile is built from YOUR reels, so each skill adapts to whatever you make.</p></div></div>
+        <div class="faq-item reveal"><div class="faq-q">Can I use them for sponsored content?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Reel Scriptwriter, yes — mention it's sponsored in your prompt and it opens with the result the product delivers, names the brand by second 5–8, and keeps disclosures in the caption, so it never sounds like an ad. Yapping Scriptwriter is built to stay organic and un-sponsored on purpose, so reach for the reel skill when there's a brand involved.</p></div></div>
+        <div class="faq-item reveal"><div class="faq-q">Do they write captions too?<span class="faq-toggle">+</span></div><div class="faq-a"><p>Yes. Every script comes with a staccato-style caption, one keyword CTA, and 5–8 hashtags — ready to paste into Instagram, TikTok, or your scheduling tool.</p></div></div>
     </div>
 </div>
 
@@ -562,9 +648,9 @@ footer .end {
     <div class="footer-links">
         <a href="https://instagram.com/shedoesai" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://shedoesai.beehiiv.com" target="_blank" rel="noopener noreferrer">Newsletter</a>
-        <a href="#download">Download</a>
+        <a href="#pick">Download</a>
     </div>
-    <p class="footer-copy">Built by Gunhild Johanne from Shedoesai, for creators who move fast. Reel Scriptwriter is a free Claude skill.</p>
+    <p class="footer-copy">Built by Gunhild Johanne from Shedoesai, for creators who move fast. Reel Scriptwriter and Yapping Scriptwriter are free Claude skills.</p>
 </footer>
 
 <script>
@@ -572,7 +658,7 @@ footer .end {
 const lines = [
     'Watch this.',
     'I let Claude roast my Instagram. 455K followers and it still found the one thing I\'m doing wrong.',
-    'From 156 to 454 new followers a day — here\'s what I changed.',
+    'I\'m not a natural yapper. So I taught Claude to write my yapping scripts.',
     'What if your scripts wrote themselves — and actually sounded like you?'
 ];
 const el = document.getElementById('typed');
