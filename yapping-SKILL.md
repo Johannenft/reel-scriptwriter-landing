@@ -97,7 +97,9 @@ Keep series continuity: open with the series tag, and if a past episode got a re
 
 ## STEP 3 - Write the yap
 
-Internal spine (NEVER print these labels): **hook → "let me tell you why" turn → the real substance, 2 to 4 beats, told loose → the best/most surprising bit last → soft close or one-line CTA.**
+Internal spine (NEVER print these labels): **hook → the hack stated plainly and FAST → the real substance, 2 to 4 beats, told loose → the best/most surprising bit last → soft close or one-line CTA.**
+
+**Get to the sauce fast (learned the hard way).** State the actual hack within the first 2 to 3 sentences, by roughly second 8. The hook plus the series tag already earn the attention. Do NOT spend three or four sentences on backstory or "why this trend matters" before revealing what you actually do. Lead with the hack ("Here's the hack. I taught Claude to..."), then justify in ONE line if it helps, placed AFTER the payload, not before. Cut any context that just restates the hook. A viewer should know what the hack is before they'd think about scrolling.
 
 Rules specific to yapping:
 - **Hook in the first sentence**, and it must carry a real specific (a number, a named tool, a result, a confession). It also has to work as the one line of on-screen text. Test: would she say it out loud to a friend without cringing.
@@ -130,6 +132,7 @@ Rules specific to yapping:
 9. **No em dashes.** Check.
 10. **Claude in the hook:** Is Claude (or her Claude skill) named in the first line? If not, fix it.
 11. **Scripted-but-natural:** Read it aloud. Does it sound like a script being read, or like her talking? If it sounds read, loosen it. The script should make her sound MORE natural, never less.
+12. **Sauce-speed test:** Is the actual hack stated within the first 2 to 3 sentences (~8 seconds)? If the viewer has to sit through backstory or a "why this matters" build-up to learn what she actually does, move the hack up and cut the lead-in. Context, if kept at all, goes after the payload as one compressed line.
 
 ## ALWAYS DELIVER
 
